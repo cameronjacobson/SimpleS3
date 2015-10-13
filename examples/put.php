@@ -13,4 +13,4 @@ $s3 = new SimpleS3(array(
 	}
 ));
 
-echo $s3->put($argv[2],file_get_contents(dirname(__DIR__).'/'.$argv[3]),'image/png');
+echo $s3->put('samplefile.png',file_get_contents(dirname(__DIR__).'/samplefile.png'),'image/png');

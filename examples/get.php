@@ -13,4 +13,4 @@ $s3 = new SimpleS3(array(
 	}
 ));
 
-echo $s3->get($argv[2]);
+echo $s3->get('samplefile.png');
