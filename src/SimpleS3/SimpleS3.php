@@ -4,6 +4,11 @@ namespace SimpleS3;
 
 use \Aws\S3\S3Client;
 
+/**
+ * USEFUL RESOURCES:
+ *  https://docs.aws.amazon.com/aws-sdk-php/v3/guide/guide/commands.html
+ */
+
 class SimpleS3
 {
 	private $client;
@@ -155,6 +160,7 @@ class SimpleS3
 		));
 	}
 
+	// https://docs.aws.amazon.com/aws-sdk-php/v3/guide/service/s3-presigned-url.html
 	public function geturl($key){
 		$cmd = $this->client->getCommand('GetObject', array(
 			'Bucket'=>$this->bucket,
@@ -164,6 +170,7 @@ class SimpleS3
 		return (string)$request->getUri();
 	}
 
+	// https://docs.aws.amazon.com/aws-sdk-php/v3/guide/service/s3-presigned-url.html
 	public function puturl($key, $contenttype){
 		$cmd = $this->client->getCommand('PutObject', array(
 			'Bucket'=>$this->bucket,
