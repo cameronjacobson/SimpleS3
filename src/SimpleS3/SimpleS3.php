@@ -7,6 +7,7 @@ use \Aws\S3\S3Client;
 /**
  * USEFUL RESOURCES:
  *  https://docs.aws.amazon.com/aws-sdk-php/v3/guide/guide/commands.html
+ *  https://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.S3.S3Client.html
  */
 
 class SimpleS3
