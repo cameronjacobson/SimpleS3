@@ -50,14 +50,18 @@ class SimpleS3
 		}
 	}
 
-	public function put($key,$value,$contenttype){
+	public function put($key,$value,$contenttype,$gzip = false){
 		try{
-			$result = $this->client->PutObject(array(
-				'Bucket'=>$this->bucket,
-				'Key'=>$key,
-				'Body'=>$value,
-				'ContentType'=>$contenttype
-			));
+			$params = array(
+                'Bucket'=>$this->bucket,
+                'Key'=>$key,
+                'Body'=>$value,
+                'ContentType'=>$contenttype
+            );
+			if($gzip){
+				$params['ContentEncoding'] = 'gzip';
+			}
+			$result = $this->client->PutObject($params);
 			return $result;
 		}
 		catch(\Exception $e){
