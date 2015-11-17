@@ -1,7 +1,7 @@
 {
     "name": "simples3/simples3",
     "require": {
-        "aws/aws-sdk-php": "3.4.*"
+        "aws/aws-sdk-php": "3.10.*"
     },
     "autoload":{
         "psr-0": {
